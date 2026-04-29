@@ -20,9 +20,7 @@ Este proyecto utiliza las herramientas más modernas del ecosistema web:
 
 *   **Frontend:** [Next.js 15](https://nextjs.org) (App Router) + [React](https://reactjs.org)
 *   **Estilos:** [Tailwind CSS](https://tailwindcss.com)
-*   **Diseño de Componentes:** [v0.dev](https://v0.dev) & [Lucide Icons](https://lucide.dev)
 *   **Lenguaje:** [TypeScript](https://typescriptlang.org)
-*   **Entorno de Desarrollo:** [Cursor AI](https://cursor.com)
 
 ## 🚀 Próximas Implementaciones (Roadmap)
 
