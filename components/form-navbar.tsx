@@ -8,8 +8,8 @@ export function FormNavbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1">
             <span className="text-2xl font-bold">
-              <span className="text-[#0f172a]">Creá Tu Propio </span>
-              <span className="text-[#2563eb]">CV</span>
+              <span className="text-slate-950">Creá Tu Propio </span>
+              <span className="text-blue-600">CV</span>
             </span>
           </Link>
           
@@ -17,19 +17,19 @@ export function FormNavbar() {
           <nav className="hidden md:flex items-center gap-8">
             <Link
               href="#"
-              className="text-[#0f172a] hover:text-[#2563eb] transition-colors text-sm font-semibold"
+              className="text-slate-950 hover:text-blue-600 transition-colors text-sm font-semibold"
             >
               PLANTILLAS
             </Link>
             <Link
               href="#"
-              className="text-[#0f172a] hover:text-[#2563eb] transition-colors text-sm font-semibold"
+              className="text-slate-950 hover:text-blue-600 transition-colors text-sm font-semibold"
             >
               RECURSOS
             </Link>
             <Link
               href="#"
-              className="text-[#0f172a] hover:text-[#2563eb] transition-colors text-sm font-semibold"
+              className="text-slate-950 hover:text-blue-600 transition-colors text-sm font-semibold"
             >
               MI CUENTA
             </Link>
@@ -38,7 +38,7 @@ export function FormNavbar() {
       </div>
       
       {/* Blue accent line */}
-      <div className="h-1 bg-gradient-to-r from-[#2563eb] to-[#0ea5e9]" />
+      <div className="h-1 bg-linear-to-r from-blue-600 to-sky-500" />
     </header>
   )
 }

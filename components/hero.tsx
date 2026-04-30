@@ -8,7 +8,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-6 md:space-y-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0f172a] leading-tight text-balance">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-950 leading-tight text-balance">
               Generá tu currículum Facil y Rápido
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
@@ -18,7 +18,7 @@ export function Hero() {
             <div className="pt-2">
               <Link
                 href="/crear-cv"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#2563eb] rounded-full hover:bg-[#1d4ed8] transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
               >
                 Empezar
               </Link>

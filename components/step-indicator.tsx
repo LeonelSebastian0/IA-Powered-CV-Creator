@@ -30,9 +30,9 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
                   className={`
                     w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold
                     ${isActive 
-                      ? "bg-[#2563eb] text-white" 
+                      ? "bg-blue-vibrant text-white" 
                       : isCompleted 
-                        ? "bg-[#2563eb] text-white"
+                        ? "bg-blue-vibrant text-white"
                         : "bg-gray-100 text-gray-400"
                     }
                   `}
@@ -43,7 +43,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
                 {/* Icon */}
                 <Icon
                   className={`w-5 h-5 ${
-                    isActive || isCompleted ? "text-[#2563eb]" : "text-gray-400"
+                    isActive || isCompleted ? "text-blue-vibrant" : "text-gray-400"
                   }`}
                 />
               </div>
@@ -53,7 +53,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
                 <div
                   className={`
                     hidden sm:block w-16 md:w-24 lg:w-32 h-0.5 mx-4
-                    ${step.number < currentStep ? "bg-[#2563eb]" : "bg-gray-200"}
+                    ${step.number < currentStep ? "bg-blue-vibrant" : "bg-gray-200"}
                   `}
                 />
               )}

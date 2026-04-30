@@ -1,22 +1,33 @@
 'use client';
-import { useState} from "react"
+import { useState } from "react"
 import { FormNavbar } from "@/components/form-navbar"
 import { StepIndicator } from "@/components/step-indicator"
 import { PersonalDataForm } from "@/components/personal-data-form"
 import { CVPreview } from "@/components/cv-preview"
 
+type FormData = {
+  nombreCompleto: string
+  apellidos: string
+  correoElectronico: string
+  telefono: string
+  linkedin: string
+  paisResidencia: string
+  ciudad: string
+}
+
 export default function CrearCVPage() {
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     nombreCompleto: "",
     apellidos: "",
     correoElectronico: "",
     telefono: "",
     linkedin: "",
-    // Campos del formulario de experiencia laboral
-    })
+    paisResidencia: "",
+    ciudad: "",
+  })
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-emerald-50/30">
+    <div className="min-h-screen bg-linear-to-br from-gray-100 via-gray-50 to-emerald-50/30">
       <FormNavbar />
       
       <main className="max-w-6xl mx-auto px-4 py-8">
