@@ -9,7 +9,7 @@ export function Hero() {
           {/* Left Content */}
           <div className="space-y-6 md:space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0f172a] leading-tight text-balance">
-              Generá tu currículum como un pro
+              Generá tu currículum Facil y Rápido
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
               Una plataforma moderna que transforma tu experiencia en un CV
@@ -20,7 +20,7 @@ export function Hero() {
                 href="/crear-cv"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#2563eb] rounded-full hover:bg-[#1d4ed8] transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
               >
-                Empezá
+                Empezar
               </Link>
             </div>
           </div>

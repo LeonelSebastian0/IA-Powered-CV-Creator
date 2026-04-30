@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export function CVPreview() {
+export function CVPreview ({formData}: any) {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
       {/* CV Document */}
@@ -14,10 +14,15 @@ export function CVPreview() {
           
           {/* Contact Info */}
           <div className="flex-1">
-            <h3 className="font-bold text-[#0f172a] text-base">Mateo García</h3>
+            <h3 className="font-bold text-[#0f172a] text-base">{formData.nombreCompleto  || "Mateo"}  </h3> 
+            <h3 className="font-bold text-[#0f172a] text-base" >{formData.apellidos || "Garcia"}</h3>
+               
+           
             <div className="mt-1 space-y-0.5 text-[10px] text-gray-600">
-              <p><span className="font-semibold">Nombre:</span> Mateo</p>
-              <p><span className="font-semibold">Apellidos:</span> García</p>
+              <p><span className="font-semibold">Nombre: </span>
+                {formData.nombreCompleto || "Mateo"}</p>
+              <p><span className="font-semibold">Apellidos: </span>
+                {formData.apellidos || "García"}</p>
               <p><span className="font-semibold">Correo Electrónico:</span> @ll.com</p>
               <p><span className="font-semibold">Teléfono:</span> 123 3620</p>
             </div>

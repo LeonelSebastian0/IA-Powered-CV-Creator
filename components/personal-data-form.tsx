@@ -1,6 +1,6 @@
 import { User, Mail, Phone, Link as LinkIcon, Plus, ChevronLeft, ChevronRight, Save } from "lucide-react"
 
-export function PersonalDataForm() {
+export function PersonalDataForm({formData, setFormData}: any) {
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
       {/* Header */}
@@ -27,10 +27,13 @@ export function PersonalDataForm() {
               <input
                 type="text"
                 placeholder="Nombre Completo"
+                id = "Input-Nombre"
                 className="w-full border border-gray-200 rounded-lg py-3 pl-11 pr-4 text-[#0f172a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent transition-all"
+                value={formData.nombreCompleto}
+                onChange={(e) => setFormData({...formData, nombreCompleto: e.target.value})} 
               />
             </div>
-          </div>
+          </div>0
           
           {/* Photo Upload */}
           <div className="flex flex-col items-center">
@@ -50,7 +53,10 @@ export function PersonalDataForm() {
             <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
+              id="input-apellidos"
               placeholder="Apellidos"
+              value={formData.apellidos}
+              onChange={(e) => setFormData({...formData, apellidos: e.target.value})}
               className="w-full border border-gray-200 rounded-lg py-3 pl-11 pr-4 text-[#0f172a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent transition-all"
             />
           </div>

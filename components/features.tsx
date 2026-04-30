@@ -1,33 +1,25 @@
-import { FileText, Mail, UserCheck } from "lucide-react"
+import { FileText, Mail, Linkedin } from "lucide-react"
 
 const features = [
   {
     id: "cv-generation",
     title: "Generación de CV",
+    description: "Transformá tu experiencia en un currículum de alto impacto optimizado para sistemas ATS.",
     icon: FileText,
   },
   {
     id: "cover-letters",
-    title: "Cartas de presentación",
+    title: "Cartas de Presentación",
+    description: "Redactá cartas personalizadas para cada postulación que resalten tu valor único.",
     icon: Mail,
   },
   {
-    id: "profile-optimization",
-    title: "Optimización de perfil",
-    icon: UserCheck,
+    id: "linkedin-profile",
+    title: "Perfil de LinkedIn",
+    description: "Mejorá tu presencia online con sugerencias de palabras clave y descripciones profesionales.",
+    icon: Linkedin,
   },
 ]
-
-function PlaceholderLines() {
-  return (
-    <div className="space-y-3 mt-4">
-      <div className="h-3 bg-gray-200 rounded-full w-full" />
-      <div className="h-3 bg-gray-200 rounded-full w-5/6" />
-      <div className="h-3 bg-gray-200 rounded-full w-4/5" />
-      <div className="h-3 bg-gray-200 rounded-full w-3/4" />
-    </div>
-  )
-}
 
 export function Features() {
   return (
@@ -38,15 +30,17 @@ export function Features() {
             <div
               key={feature.id}
               id={feature.id}
-              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className="w-12 h-12 bg-[#2563eb]/10 rounded-xl flex items-center justify-center mb-6">
-                <feature.icon className="w-6 h-6 text-[#2563eb]" />
+              <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                <feature.icon className="w-7 h-7 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-[#0f172a]">
+              <h3 className="text-xl font-bold text-navy mb-3">
                 {feature.title}
               </h3>
-              <PlaceholderLines />
+              <p className="text-slate-600 leading-relaxed">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
@@ -54,3 +48,4 @@ export function Features() {
     </section>
   )
 }
+
