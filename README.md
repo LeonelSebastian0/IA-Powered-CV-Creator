@@ -1,6 +1,6 @@
 # 🧠 IA-Powered CV Creator
 
-¡Generá tu currículum como un pro! Esta es una plataforma moderna y minimalista que utiliza Inteligencia Artificial para transformar tu trayectoria en un CV profesional de alto impacto en cuestión de segundos.
+¡Generá tu currículum Fácil y Rápido! Esta es una plataforma moderna y minimalista que utiliza Inteligencia Artificial para transformar tu trayectoria en un CV profesional de alto impacto en cuestión de segundos.
 
 > **Estado del Proyecto:** 🚧 En Desarrollo (Maquetación y lógica de UI)
 
