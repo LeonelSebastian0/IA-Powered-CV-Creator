@@ -1,16 +1,10 @@
+import type { FormData } from "@/types/form-data"
+
 type CVPreviewProps = {
-  formData?: {
-    nombreCompleto?: string
-    apellidos?: string
-    correoElectronico?: string
-    telefono?: string
-    ciudad?: string
-    linkedin?: string
-    paisResidencia?: string
-  }
+  formData: FormData
 }
 
-export function CVPreview({ formData = {} }: CVPreviewProps) {
+export function CVPreview({ formData }: CVPreviewProps) {
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
       {/* CV Document */}
@@ -49,9 +43,14 @@ export function CVPreview({ formData = {} }: CVPreviewProps) {
                 <p className="text-[9px] text-gray-500">Nombre</p>
                 <p className="text-[9px] text-slate-950"> {formData.nombreCompleto || "Mateo"}</p>
                 <p className="text-[9px] text-gray-500 mt-2">Correo Electrónico</p>
-                <p className="text-[7px] text-slate-950"> {formData.correoElectronico || "aaa.@gmail.com"}</p>
+                <p className="text-[9px] text-slate-950"> {formData.correoElectronico || "aaa.@gmail.com"}</p>
                 <p className="text-[9px] text-gray-500 mt-2">Teléfono</p>
-                <p className="text-[9px] text-slate-950">(172)33 658.com</p>
+                <p
+                  className="text-[9px] text-slate-950"
+                  style={{ fontSize: (formData.telefono?.length || 0) > 20 ? '7px' : '9px' }}
+                >
+                  {formData.telefono || "(115) 356 7890"}
+                </p>
                 <p className="text-[9px] text-gray-500 mt-2"> Ciudad</p>
                 <p className="text-[9px] text-slate-950"> {formData.ciudad || "(115) 356 7890"}</p>
               </div>
