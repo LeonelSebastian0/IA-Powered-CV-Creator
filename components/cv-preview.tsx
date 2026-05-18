@@ -42,12 +42,16 @@ export function CVPreview({ formData }: CVPreviewProps) {
               <div className="space-y-1">
                 <p className="text-[9px] text-gray-500">Nombre</p>
                 <p className="text-[9px] text-slate-950"> {formData.nombreCompleto || "Mateo"}</p>
+
                 <p className="text-[9px] text-gray-500 mt-2">Correo Electrónico</p>
-                <p className="text-[9px] text-slate-950"> {formData.correoElectronico || "aaa.@gmail.com"}</p>
+                
+                <p className="text-[9px] text-slate-950"  style={{fontSize: (formData.correoElectronico?.length || 0) > 20 ? '7px'  : '9px' }}
+                >{formData.correoElectronico || "ejemplo@gmail.com"}
+                  </p>
                 <p className="text-[9px] text-gray-500 mt-2">Teléfono</p>
                 <p
                   className="text-[9px] text-slate-950"
-                  style={{ fontSize: (formData.telefono?.length || 0) > 20 ? '7px' : '9px' }}
+                  style={{ fontSize: (formData.telefono?.length || 0) > 15 ? '7px' : '9px' }}
                 >
                   {formData.telefono || "(115) 356 7890"}
                 </p>
@@ -93,7 +97,7 @@ export function CVPreview({ formData }: CVPreviewProps) {
                 <div className="flex items-start gap-1">
                   <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1" />
                   <div>
-                    <p className="font-semibold text-[9px] text-slate-950">Paur de Resigniencia</p>
+                    <p className="font-semibold text-[9px] text-slate-950">{formData.empresa || "Empresa " } </p>
                     <p className="text-[8px] text-gray-500">Jul 2019 - Jul 2019</p>
                   </div>
                 </div>

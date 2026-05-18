@@ -28,40 +28,64 @@ export function Experiencia({ formData, setFormData, onNext, onBack }: Experienc
       </div>
 
       <div className="space-y-5">
-        {/* Puesto / Cargo */}
+        {/* Empresa 1*/}
         <div>
           <label className="block text-sm font-medium text-slate-950 mb-2">
-            Puesto o Cargo
+            Empresa 1
           </label>
           <div className="relative">
             <Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
-              placeholder="Ej: Desarrollador Frontend"
-              value={formData.puesto || ""}
-              onChange={(e) => setFormData({ ...formData, puesto: e.target.value })}
+              placeholder="Empresa 1"
+              value={formData.empresa1 || ""}
+              onChange={(e) => setFormData({ ...formData, empresa1: e.target.value })}
               className="w-full border border-gray-200 rounded-lg py-3 pl-11 pr-4 text-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
             />
           </div>
         </div>
 
-        {/* Empresa */}
+        {/* Empresa 2*/}
         <div>
           <label className="block text-sm font-medium text-slate-950 mb-2">
-            Empresa
+            Empresa 2
           </label>
           <div className="relative">
             <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
-              placeholder="Ej: Google"
-              value={formData.empresa || ""}
-              onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
+              placeholder="Empresa 2"
+              value={formData.empresa2 || ""}
+              onChange={(e) => setFormData({ ...formData, empresa2: e.target.value })}
+              className="w-full border border-gray-200 rounded-lg py-3 pl-11 pr-4 text-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+            />
+          </div>
+        </div>
+
+
+        {/* empresa 3*/}
+      <div>
+          <label className="block text-sm font-medium text-slate-950 mb-2">
+            Empresa 3
+          </label>
+          <div className="relative">
+            <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Empresa 3"
+              value={formData.empresa3 || ""}
+              onChange={(e) => setFormData({ ...formData, empresa3: e.target.value })}
               className="w-full border border-gray-200 rounded-lg py-3 pl-11 pr-4 text-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
             />
           </div>
         </div>
       </div>
+
+
+      
+      
+    
+      
 
       {/* Botones de Navegación */}
       <div className="mt-10 flex items-center justify-between border-t border-gray-100 pt-8">
