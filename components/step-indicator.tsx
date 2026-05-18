@@ -14,7 +14,7 @@ const steps = [
 
 export function StepIndicator({ currentStep }: StepIndicatorProps) {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 px-8 py-6">
+    <div className="bg-card text-card-foreground rounded-2xl shadow-sm border border-border px-8 py-6">
       <div className="flex items-center justify-between">
         {steps.map((step, index) => {
           const Icon = step.icon
@@ -33,7 +33,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
                       ? "bg-blue-vibrant text-white" 
                       : isCompleted 
                         ? "bg-blue-vibrant text-white"
-                        : "bg-gray-100 text-gray-400"
+                        : "bg-muted text-muted-foreground"
                     }
                   `}
                 >
@@ -43,7 +43,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
                 {/* Icon */}
                 <Icon
                   className={`w-5 h-5 ${
-                    isActive || isCompleted ? "text-blue-vibrant" : "text-gray-400"
+                    isActive || isCompleted ? "text-blue-vibrant" : "text-muted-foreground"
                   }`}
                 />
               </div>
@@ -53,7 +53,7 @@ export function StepIndicator({ currentStep }: StepIndicatorProps) {
                 <div
                   className={`
                     hidden sm:block w-16 md:w-24 lg:w-32 h-0.5 mx-4
-                    ${step.number < currentStep ? "bg-blue-vibrant" : "bg-gray-200"}
+                    ${step.number < currentStep ? "bg-blue-vibrant" : "bg-border"}
                   `}
                 />
               )}

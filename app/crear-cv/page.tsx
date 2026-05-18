@@ -19,7 +19,9 @@ export default function CrearCVPage() {
     paisResidencia: "",
     ciudad: "",
     puesto: "",
-    empresa: "",
+    empresa1: "",
+    empresa2: "",
+    empresa3: "",
     fechaInicio: "",
     fechaFin: "",
   })
@@ -28,7 +30,7 @@ export default function CrearCVPage() {
   const handleBack = () => setStep((prev) => prev - 1);
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-100 via-gray-50 to-emerald-50/30">
+    <div className="min-h-screen bg-background text-foreground">
       <FormNavbar />
       
       <main className="max-w-6xl mx-auto px-4 py-8">

@@ -3,15 +3,15 @@ import Link from "next/link"
 
 export function Hero() {
   return (
-    <section className="bg-white py-16 md:py-24 lg:py-32">
+    <section className="bg-background py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-6 md:space-y-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-950 leading-tight text-balance">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
               Generá tu currículum Facil y Rápido
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
               Una plataforma moderna que transforma tu experiencia en un CV
               profesional con la ayuda de IA
             </p>

@@ -8,6 +8,9 @@ export type FormData = {
   ciudad: string
   puesto: string
   empresa: string
+  empresa1: string
+  empresa2: string
+  empresa3: string
   fechaInicio: string
   fechaFin: string
 }
