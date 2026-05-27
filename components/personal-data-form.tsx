@@ -192,7 +192,7 @@ export function PersonalDataForm({ formData, setFormData, onNext }: PersonalData
           className={`
             flex items-center gap-2 px-8 py-3 rounded-xl font-bold transition-all duration-300
             ${isFormValid 
-              ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-200" 
+              ? "bg-blue-600 hover:bg-blue-700 shadow-blue-200" 
               : "bg-muted text-muted-foreground cursor-not-allowed"}
           `}
         >

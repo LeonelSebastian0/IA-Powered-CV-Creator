@@ -16,7 +16,7 @@ export function Navbar() {
   }, [])
 
   return (
-    <nav className="bg-slate-950 text-white border-b border-white/10">
+    <nav className="dark:bg-muted bg-background dark:text-white text-foreground border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -30,19 +30,19 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="#cv-generation"
-              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+              className="dark:text-gray-300 text-gray-700 dark:hover:text-white hover:text-foreground transition-colors text-sm font-medium"
             >
               Generación de CV
             </Link>
             <Link
               href="#cover-letters"
-              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+              className="dark:text-gray-300 text-gray-700 dark:hover:text-white hover:text-foreground transition-colors text-sm font-medium"
             >
               Cartas de presentación
             </Link>
             <Link
               href="/signin"
-              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+              className="dark:text-gray-300 text-gray-700 dark:hover:text-white hover:text-foreground transition-colors text-sm font-medium"
             >
               Sign in
             </Link>
@@ -78,25 +78,25 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-white/10 bg-slate-950">
+        <div className="md:hidden border-t border-border dark:bg-slate-950 bg-background">
           <div className="px-4 py-4 space-y-3">
             <Link
               href="#cv-generation"
-              className="block text-gray-300 hover:text-white transition-colors text-sm font-medium py-2"
+              className="block dark:text-gray-300 text-gray-700 dark:hover:text-white hover:text-foreground transition-colors text-sm font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Generación de CV
             </Link>
             <Link
               href="#cover-letters"
-              className="block text-gray-300 hover:text-white transition-colors text-sm font-medium py-2"
+              className="block dark:text-gray-300 text-gray-700 dark:hover:text-white hover:text-foreground transition-colors text-sm font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Cartas de presentación
             </Link>
             <Link
               href="/signin"
-              className="block text-gray-300 hover:text-white transition-colors text-sm font-medium py-2"
+              className="block dark:text-gray-300 text-gray-700 dark:hover:text-white hover:text-foreground transition-colors text-sm font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Sign in

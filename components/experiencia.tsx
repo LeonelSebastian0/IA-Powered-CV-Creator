@@ -45,6 +45,27 @@ export function Experiencia({ formData, setFormData, onNext, onBack }: Experienc
           </div>
         </div>
 
+
+        {/* Periodo 1 */}
+        <div>
+
+          <label className="block text-sm font-medium text-foreground mb-2">
+            Periodo en Empresa 1
+          </label>
+
+            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Ej: Ene 2020 - Dic 2022"
+              value={formData.periodo1 || ""}
+              onChange={(e) => setFormData({ ...formData, periodo1: e.target.value })}
+              className="w-full border border-border rounded-lg py-3 pl-11 pr-4 text-foreground bg-background focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+            />
+          </div>
+
+
+        </div>
         {/* Empresa 2*/}
         <div>
           <label className="block text-sm font-medium text-foreground mb-2">
@@ -103,7 +124,7 @@ export function Experiencia({ formData, setFormData, onNext, onBack }: Experienc
           className={`
             flex items-center gap-2 px-8 py-3 rounded-xl font-bold transition-all duration-300
             ${isFormValid 
-              ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-200" 
+              ? "bg-blue-600 hover:bg-blue-700  shadow-blue-200" 
               : "bg-muted text-muted-foreground cursor-not-allowed"}
           `}
         >

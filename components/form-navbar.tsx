@@ -21,7 +21,7 @@ export function FormNavbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1">
             <span className="text-2xl font-bold">
-              <span className="text-foreground">Creá Tu Propio </span>
+              <span className="text-foreground">IA-Powered CV Creator </span>
               <span className="text-blue-600">CV</span>
             </span>
           </Link>

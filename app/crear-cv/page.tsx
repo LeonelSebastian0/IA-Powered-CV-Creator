@@ -6,6 +6,7 @@ import { StepIndicator } from "@/components/step-indicator"
 import { PersonalDataForm } from "@/components/personal-data-form"
 import { CVPreview } from "@/components/cv-preview"
 import { Experiencia } from "@/components/experiencia"
+import { Educacion } from "@/components/educacion"
 
 export default function CrearCVPage() {
 
@@ -19,11 +20,16 @@ export default function CrearCVPage() {
     paisResidencia: "",
     ciudad: "",
     puesto: "",
+    empresa: "",
     empresa1: "",
     empresa2: "",
     empresa3: "",
     fechaInicio: "",
     fechaFin: "",
+    institucion: "",
+    periodo1: "",
+    periodo2: "",
+    periodo3: "",
   })
 
   const handleNext = () => setStep((prev) => prev + 1);
@@ -55,6 +61,16 @@ export default function CrearCVPage() {
                 setFormData={setFormData} 
                 onNext={handleNext} 
                 onBack={handleBack} 
+              />
+            )}
+
+
+            {step === 3 && (
+              <Educacion 
+                formData={formData}
+                setFormData={setFormData}
+                onNext={handleNext}
+                onBack={handleBack}
               />
             )}
           </div>
