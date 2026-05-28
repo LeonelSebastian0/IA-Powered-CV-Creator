@@ -6,17 +6,17 @@ type CVPreviewProps = {
 
 export function CVPreview({ formData }: CVPreviewProps) {
   return (
-    <div className="bg-card text-card-foreground rounded-2xl shadow-lg border border-border overflow-hidden">
+    <div className="bg-card h-auto text-card-foreground rounded-2xl shadow-lg border border-border overflow-hidden">
       {/* CV Document */}
-      <div className="p-4 text-xs">
+      <div className="p-6  text-sm">
         {/* Header with photo and info */}
         <div className="flex gap-3 mb-4">
           {/* Photo placeholder */}
-          <div className="w-16 h-20 bg-popover rounded-lg overflow-hidden flex items-center justify-center">
+          <div className="w-20 h-24 bg-popover rounded-lg overflow-hidden flex items-center justify-center">
             {formData.fotoUrl ? (
               <img src={formData.fotoUrl} alt="Foto de perfil" className="w-full h-full object-cover" />
             ) : (
-              <div className="w-10 h-10 bg-secondary rounded-full" />
+              <div className="w-12 h-12 bg-secondary rounded-full" />
             )}
           </div>
           
@@ -87,7 +87,7 @@ export function CVPreview({ formData }: CVPreviewProps) {
                   <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1" />
                   <div>
                     <p className="font-semibold text-[9px] text-foreground">{formData.empresa1 || "Empresa 1"}</p>
-                    <p className="text-[8px] text-muted-foreground">Mex 2011 - May 2019</p>
+                    <p className="text-[8px] text-muted-foreground">  {formData.periodo1  || "EJ = Mex 2011 - May 2019"}</p>
                   </div>
                 </div>
                 <ul className="ml-3 mt-1 space-y-0.5">
@@ -102,7 +102,7 @@ export function CVPreview({ formData }: CVPreviewProps) {
                   <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1" />
                   <div>
                     <p className="font-semibold text-[9px] text-foreground">{formData.empresa2 || "Empresa " } </p>
-                    <p className="text-[8px] text-muted-foreground">Jul 2019 - Jul 2019</p>
+                    <p className="text-[8px] text-muted-foreground">{formData.periodo2 || "Jul 2019 - Jul 2019" }</p>
                   </div>
                 </div>
                 <ul className="ml-3 mt-1 space-y-0.5">
@@ -111,6 +111,22 @@ export function CVPreview({ formData }: CVPreviewProps) {
                 </ul>
               </div>
             </div>
+
+
+            {formData.empresa3 && (
+              <div>
+                <div className="flex items-start gap-1">
+                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1" />
+                  <div>
+                    <p className="font-semibold text-[9px] text-foreground">{formData.empresa3}</p>
+                    <p className="text-[8px] text-muted-foreground">{formData.periodo3}</p>
+                  </div>
+                  </div>
+                    <ul className="ml-3 mt-1 space-y-0.5">
+                        <li className="text-[8px] text-muted-foreground">• Descripción del puesto...</li>
+                    </ul>
+              </div>
+            )}
             
             {/* Educación Section */}
             <div>

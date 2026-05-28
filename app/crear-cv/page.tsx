@@ -77,8 +77,8 @@ export default function CrearCVPage() {
           </div>
           
           {/* CV Preview Section */}
-          <div className="lg:w-80 xl:w-96">
-            <CVPreview  formData={formData} />
+          <div className="lg:w-96 xl:w-2/5 xl:shrink-0">
+            <CVPreview formData={formData} />
           </div>
         </div>
       </main>
