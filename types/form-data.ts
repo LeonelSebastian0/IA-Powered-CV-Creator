@@ -6,6 +6,7 @@ export type FormData = {
   linkedin: string
   paisResidencia: string
   ciudad: string
+  fotoUrl: string
   puesto: string
   empresa: string
   empresa1: string
@@ -13,4 +14,8 @@ export type FormData = {
   empresa3: string
   fechaInicio: string
   fechaFin: string
+  institucion: string
+  periodo1: string
+  periodo2: string
+  periodo3: string
 }

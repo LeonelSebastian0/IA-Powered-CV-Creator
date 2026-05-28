@@ -12,8 +12,12 @@ export function CVPreview({ formData }: CVPreviewProps) {
         {/* Header with photo and info */}
         <div className="flex gap-3 mb-4">
           {/* Photo placeholder */}
-          <div className="w-16 h-20 bg-popover rounded-lg flex items-center justify-center">
-            <div className="w-10 h-10 bg-secondary rounded-full" />
+          <div className="w-16 h-20 bg-popover rounded-lg overflow-hidden flex items-center justify-center">
+            {formData.fotoUrl ? (
+              <img src={formData.fotoUrl} alt="Foto de perfil" className="w-full h-full object-cover" />
+            ) : (
+              <div className="w-10 h-10 bg-secondary rounded-full" />
+            )}
           </div>
           
           {/* Contact Info */}

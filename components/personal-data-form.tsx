@@ -1,4 +1,6 @@
-import { type Dispatch, type SetStateAction } from "react"
+'use client';
+
+import { type Dispatch, type SetStateAction, useEffect, useState } from "react"
 import type { FormData } from "@/types/form-data"
 import { User, Mail, Phone, Link as LinkIcon, Plus, ChevronLeft, ChevronRight, Save } from "lucide-react"
 
@@ -9,7 +11,54 @@ type PersonalDataFormProps = {
 }
 
 export function PersonalDataForm({ formData, setFormData, onNext }: PersonalDataFormProps) {
-  const isFormValid = formData.nombreCompleto.trim() !== '' && formData.apellidos.trim() !== '' && formData.correoElectronico.trim() !== '' && formData.telefono.trim() !== '' && formData.paisResidencia.trim() !== '' && formData.ciudad.trim() !== '';
+  const [photoPreviewUrl, setPhotoPreviewUrl] = useState(formData.fotoUrl || "");
+  const [showPhotoError, setShowPhotoError] = useState(false);
+
+  useEffect(() => {
+    if (formData.fotoUrl && formData.fotoUrl !== photoPreviewUrl) {
+      setPhotoPreviewUrl(formData.fotoUrl);
+    }
+  }, [formData.fotoUrl, photoPreviewUrl]);
+
+  useEffect(() => {
+    return () => {
+      if (photoPreviewUrl?.startsWith("blob:")) {
+        URL.revokeObjectURL(photoPreviewUrl);
+      }
+    }
+  }, [photoPreviewUrl]);
+
+  const handlePhotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (photoPreviewUrl?.startsWith("blob:")) {
+      URL.revokeObjectURL(photoPreviewUrl);
+    }
+
+    const previewUrl = URL.createObjectURL(file);
+    setPhotoPreviewUrl(previewUrl);
+    setFormData({ ...formData, fotoUrl: previewUrl });
+    setShowPhotoError(false);
+  };
+
+  const areFieldsComplete =
+    formData.nombreCompleto.trim() !== '' &&
+    formData.apellidos.trim() !== '' &&
+    formData.correoElectronico.trim() !== '' &&
+    formData.telefono.trim() !== '' &&
+    formData.paisResidencia.trim() !== '' &&
+    formData.ciudad.trim() !== '';
+
+  const handleNext = () => {
+    if (!formData.fotoUrl.trim()) {
+      setShowPhotoError(true);
+      return;
+    }
+
+    setShowPhotoError(false);
+    onNext();
+  };
   
   return (
     <div className="bg-card text-card-foreground rounded-2xl shadow-sm border border-border p-6 md:p-8">
@@ -47,10 +96,35 @@ export function PersonalDataForm({ formData, setFormData, onNext }: PersonalData
           
           {/* Photo Upload */}
           <div className="flex flex-col items-center">
-            <div className="w-24 h-28 border-2 border-border rounded-lg flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-blue-600 hover:bg-blue-50/20 transition-all">
-              <Plus className="w-6 h-6 text-muted-foreground" />
-              <span className="text-xs text-muted-foreground text-center px-2">Sube tu foto</span>
-            </div>
+            <label
+              htmlFor="photo-upload"
+              className={`w-24 h-28 border-2 rounded-lg flex items-center justify-center overflow-hidden cursor-pointer hover:border-blue-600 hover:bg-blue-50/20 transition-all ${showPhotoError && !photoPreviewUrl ? 'border-red-500' : 'border-border'}`}
+            >
+              {photoPreviewUrl ? (
+                <img
+                  src={photoPreviewUrl}
+                  alt="Vista previa"
+                  className="object-cover w-full h-full"
+                />
+              ) : (
+                <div className="flex flex-col items-center justify-center gap-2 text-muted-foreground">
+                  <Plus className="w-6 h-6" />
+                  <span className="text-xs text-center px-2">Sube tu foto</span>
+                </div>
+              )}
+            </label>
+            <input
+              id="photo-upload"
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handlePhotoChange}
+            />
+            {showPhotoError && !photoPreviewUrl && (
+              <p className="mt-2 text-xs text-red-500 text-center">
+                Debes subir tu foto para continuar.
+              </p>
+            )}
           </div>
         </div>
         
@@ -187,17 +261,17 @@ export function PersonalDataForm({ formData, setFormData, onNext }: PersonalData
         
          <button
           type="button"
-          disabled={!isFormValid}
-          onClick={onNext}
+          disabled={!areFieldsComplete}
+          onClick={handleNext}
           className={`
             flex items-center gap-2 px-8 py-3 rounded-xl font-bold transition-all duration-300
-            ${isFormValid 
+            ${areFieldsComplete 
               ? "bg-blue-600 hover:bg-blue-700 shadow-blue-200" 
               : "bg-muted text-muted-foreground cursor-not-allowed"}
           `}
         >
           SIGUIENTE
-          <ChevronRight className={`w-5 h-5 ${isFormValid ? "animate-pulse" : ""}`} />
+          <ChevronRight className={`w-5 h-5 ${areFieldsComplete ? "animate-pulse" : ""}`} />
         </button>
       </div>
     </div>

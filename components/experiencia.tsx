@@ -84,6 +84,32 @@ export function Experiencia({ formData, setFormData, onNext, onBack }: Experienc
         </div>
 
 
+       {/* Periodo 2 */}
+        <div>
+
+          <label className="block text-sm font-medium text-foreground mb-2">
+            Periodo en Empresa 2
+          </label>
+
+            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Ej: Ene 2020 - Dic 2022"
+              value={formData.periodo2 || ""}
+              onChange={(e) => setFormData({ ...formData, periodo2: e.target.value })}
+              className="w-full border border-border rounded-lg py-3 pl-11 pr-4 text-foreground bg-background focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+            />
+          </div>
+
+
+        </div>
+
+
+
+        
+
+
         {/* empresa 3*/}
       <div>
           <label className="block text-sm font-medium text-foreground mb-2">
@@ -102,6 +128,26 @@ export function Experiencia({ formData, setFormData, onNext, onBack }: Experienc
         </div>
       </div>
 
+    {/* Periodo 2 */}
+        <div>
+
+          <label className="block text-sm font-medium text-foreground mb-2">
+            Periodo en Empresa 3
+          </label>
+
+            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Ej: Ene 2020 - Dic 2022"
+              value={formData.periodo3 || ""}
+              onChange={(e) => setFormData({ ...formData, periodo3: e.target.value })}
+              className="w-full border border-border rounded-lg py-3 pl-11 pr-4 text-foreground bg-background focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+            />
+          </div>
+
+
+        </div>
 
       
       
