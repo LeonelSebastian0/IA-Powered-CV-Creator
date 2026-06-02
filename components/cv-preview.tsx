@@ -81,55 +81,24 @@ export function CVPreview({ formData }: CVPreviewProps) {
                 Experiencia
               </h4>
               
-              {/* Job 1 */}
-              <div className="mb-3">
-                <div className="flex items-start gap-1">
-                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1" />
-                  <div>
-                    <p className="font-semibold text-[9px] text-foreground">{formData.empresa1 || "Empresa 1"}</p>
-                    <p className="text-[8px] text-muted-foreground">  {formData.periodo1  || "EJ = Mex 2011 - May 2019"}</p>
+              {(formData.experiencias ?? []).map((exp, idx) => (
+                <div className="mb-3" key={exp.id}>
+                  <div className="flex items-start gap-1">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1" />
+                    <div>
+                      <p className="font-semibold text-[9px] text-foreground">{exp.empresa || `Empresa ${idx + 1}`}</p>
+                      <p className="text-[8px] text-muted-foreground">{exp.periodo || (idx === 0 ? "EJ = Mex 2011 - May 2019" : "Jul 2019 - Jul 2019")}</p>
+                    </div>
                   </div>
+                  <ul className="ml-3 mt-1 space-y-0.5">
+                    <li className="text-[8px] text-muted-foreground">• Descripción</li>
+                    <p className="font-semibold text-[8px] text-foreground">{exp.descripcion || ""}</p>
+                  </ul>
                 </div>
-                <ul className="ml-3 mt-1 space-y-0.5">
-                  <li className="text-[8px] text-muted-foreground " >Descripcion</li>
-                    <p className="font-semibold text-[8px] text-foreground" > {formData.descripcion1 || ""}</p>
-                  
-                </ul>
-              </div>
-              
-              {/* Job 2 */}
-              <div>
-                <div className="flex items-start gap-1">
-                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1" />
-                  <div>
-                    <p className="font-semibold text-[9px] text-foreground">{formData.empresa2 || "Empresa " } </p>
-                    <p className="text-[8px] text-muted-foreground">{formData.periodo2 || "Jul 2019 - Jul 2019" }</p>
-                  </div>
-                </div>
-                <ul className="ml-3 mt-1 space-y-0.5">
-                  <li className="text-[8px] text-muted-foreground">• Lorem ipsum dolor sit amet, consectetur adipiscing.</li>
-                  <li className="text-[8px] text-muted-foreground">• Commoncod incididunt ut labore et magna.</li>
-                </ul>
-              </div>
+              ))}
             </div>
-
-            {/* Job 3 (dinamico) */}
-            {formData.empresa3 && (
-              <div>
-                <div className="flex items-start gap-1">
-                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1" />
-                  <div>
-                    <p className="font-semibold text-[9px] text-foreground">{formData.empresa3}</p>
-                    <p className="text-[8px] text-muted-foreground">{formData.periodo3}</p>
-                  </div>
-                  </div>
-                    <ul className="ml-3 mt-1 space-y-0.5">
-                        <li className="text-[8px] text-muted-foreground">• Descripción del puesto...</li>
-                    </ul>
-              </div>
-            )}
             
-            {/* Educación Section */}
+            {/* Educación Seccion*/}
             <div>
               <h4 className="font-bold text-foreground text-[10px] uppercase tracking-wider mb-2">
                 Educación

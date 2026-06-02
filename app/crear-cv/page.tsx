@@ -22,18 +22,10 @@ export default function CrearCVPage() {
     fotoUrl: "",
     puesto: "",
     empresa: "",
-    empresa1: "",
-    empresa2: "",
-    empresa3: "",
     fechaInicio: "",
     fechaFin: "",
     institucion: "",
-    periodo1: "",
-    periodo2: "",
-    periodo3: "",
-    descripcion1: "",
-    descripcion2: "",
-    descripcion3: "",
+    experiencias: [{ id: crypto.randomUUID(), empresa: "", periodo: "", descripcion: "" }],
   })
 
   const handleNext = () => setStep((prev) => prev + 1);

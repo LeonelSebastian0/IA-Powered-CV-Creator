@@ -1,3 +1,10 @@
+export type ExperienciaItem = {
+  id: string
+  empresa: string
+  periodo: string
+  descripcion: string
+}
+
 export type FormData = {
   nombreCompleto: string
   apellidos: string
@@ -9,16 +16,8 @@ export type FormData = {
   fotoUrl: string
   puesto: string
   empresa: string
-  empresa1: string
-  empresa2: string
-  empresa3: string
   fechaInicio: string
   fechaFin: string
   institucion: string
-  periodo1: string
-  periodo2: string
-  periodo3: string
-  descripcion1: string
-  descripcion2: string
-  descripcion3: string
+  experiencias: ExperienciaItem[]
 }
