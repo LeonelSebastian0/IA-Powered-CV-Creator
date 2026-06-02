@@ -44,7 +44,7 @@ export function Navbar() {
               href="/signin"
               className="dark:text-gray-300 text-gray-700 dark:hover:text-white hover:text-foreground transition-colors text-sm font-medium"
             >
-              Sign in
+              Registrarse
             </Link>
             <button
               type="button"

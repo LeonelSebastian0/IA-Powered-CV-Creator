@@ -31,6 +31,9 @@ export default function CrearCVPage() {
     periodo1: "",
     periodo2: "",
     periodo3: "",
+    descripcion1: "",
+    descripcion2: "",
+    descripcion3: "",
   })
 
   const handleNext = () => setStep((prev) => prev + 1);

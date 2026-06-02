@@ -91,8 +91,9 @@ export function CVPreview({ formData }: CVPreviewProps) {
                   </div>
                 </div>
                 <ul className="ml-3 mt-1 space-y-0.5">
-                  <li className="text-[8px] text-muted-foreground">• Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                  <li className="text-[8px] text-muted-foreground">• Sed do eiusmod tempor incididunt ut labore.</li>
+                  <li className="text-[8px] text-muted-foreground " >Descripcion</li>
+                    <p className="font-semibold text-[8px] text-foreground" > {formData.descripcion1 || ""}</p>
+                  
                 </ul>
               </div>
               
@@ -112,7 +113,7 @@ export function CVPreview({ formData }: CVPreviewProps) {
               </div>
             </div>
 
-
+            {/* Job 3 (dinamico) */}
             {formData.empresa3 && (
               <div>
                 <div className="flex items-start gap-1">

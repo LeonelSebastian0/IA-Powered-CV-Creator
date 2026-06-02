@@ -18,4 +18,7 @@ export type FormData = {
   periodo1: string
   periodo2: string
   periodo3: string
+  descripcion1: string
+  descripcion2: string
+  descripcion3: string
 }

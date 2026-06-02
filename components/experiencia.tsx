@@ -45,15 +45,12 @@ export function Experiencia({ formData, setFormData, onNext, onBack }: Experienc
           </div>
         </div>
 
-
         {/* Periodo 1 */}
         <div>
-
           <label className="block text-sm font-medium text-foreground mb-2">
             Periodo en Empresa 1
           </label>
-
-            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <div className="relative">
             <input
               type="text"
@@ -63,8 +60,19 @@ export function Experiencia({ formData, setFormData, onNext, onBack }: Experienc
               className="w-full border border-border rounded-lg py-3 pl-11 pr-4 text-foreground bg-background focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
             />
           </div>
+        </div>
 
-
+        {/* descripcion*/}
+        <div>
+          <label className="block text-sm font-medium text-foreground mb-2">
+            Descripción de responsabilidades y logros en Empresa 1
+          </label>
+          <textarea
+            placeholder="Describe tus responsabilidades y logros..."
+            value={formData.descripcion1 || ""}
+            onChange={(e) => setFormData({ ...formData, descripcion1: e.target.value })}
+            className="w-full border border-border rounded-lg py-3 px-4 text-foreground bg-background focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all min-h-[96px] mt-2"
+          />
         </div>
         {/* Empresa 2*/}
         <div>
